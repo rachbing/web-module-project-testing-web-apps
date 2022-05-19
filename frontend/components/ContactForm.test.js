@@ -12,11 +12,11 @@ test('renders without errors', () => {
 test('renders the contact form header', () => {
     render(<ContactForm/>);
 
-    const headerElement = screen.queryByText(/contact form/);
+    const headerElement = screen.queryByText(/contact form/i);
     
     expect(headerElement).toBeInTheDocument();
     expect(headerElement).toBeTruthy();
-    expect(headerElement).toHaveTextContent(/contact form/);
+    expect(headerElement).toHaveTextContent(/contact form/i);
 });
 
 test('renders ONE error message if user enters less then 5 characters into firstname.', async () => {
@@ -29,9 +29,9 @@ test('renders ONE error message if user enters less then 5 characters into first
     expect(errorMessages).toHaveLength(1);
 });
 
-// test('renders THREE error messages if user enters no values into any fields.', async () => {
+test('renders THREE error messages if user enters no values into any fields.', async () => {
 
-// });
+});
 
 // test('renders ONE error message if user enters a valid first name and last name but no email.', async () => {
 
